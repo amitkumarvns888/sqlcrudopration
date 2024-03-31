@@ -8,7 +8,7 @@ const Singleemp = () => {
     // data fetching all
     const [userData, setUserData] = useState([]);
     const fetchSingleUser = async () => {
-        const res = await axios.get(`http://localhost:8085/singleemp/${1}`);
+        const res = await axios.get(`http://localhost:8085/singleemp/${id}`);
         console.log(res);
         setUserData(res.data);
     };

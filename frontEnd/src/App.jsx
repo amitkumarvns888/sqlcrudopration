@@ -6,6 +6,11 @@ import UpdateEmp from './UpdateEmp'
 import AddEmp from './AddEmp'
 import Singleemp from './Singleemp'
 import NewTable from './NewTable'
+import Addexptable from './Addexptable'
+import ExpUpdate from './ExpUpdate'
+import Addreltable from './Addreltable'
+import RelUpdate from './Relupdate'
+
 
 function App() {
 
@@ -18,6 +23,10 @@ function App() {
           <Route path='/updateemp/:id' element={<UpdateEmp />} />
           <Route path='/addemployee' element={<AddEmp />} />
           <Route path='/newtable/:id' element={<NewTable />} />
+          <Route path='/addexptable/:id' element={<Addexptable />} />
+          <Route path='/expupdate/:id' element={<ExpUpdate />} />
+          <Route path='/addreltable/:id' element={<Addreltable />} />
+          <Route path='/relupdate/:id' element={<RelUpdate />} />
         </Routes>
       </BrowserRouter>
     </>

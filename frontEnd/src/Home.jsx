@@ -32,6 +32,7 @@ const Home = () => {
     }, []);
 
     const handleDelete = async (id) => {
+        console.log(id)
         const res = await axios.delete(`http://localhost:8085/deleteemp/${id}`);
         if (res.status === 200) {
             fetchAllUser();
@@ -44,6 +45,7 @@ const Home = () => {
 
     const singlebtn = (item) => {
         navigate(`/newtable/${item.id}`)
+        // console.log(item.id)
     }
 
     return (
@@ -59,7 +61,7 @@ const Home = () => {
                     <thead className="text-[17px] text-gray-700 uppercase bg-gray-500">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                SN.
+                                ID.
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Employee Name
@@ -91,14 +93,14 @@ const Home = () => {
                                     scope="row"
                                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                 >
-                                    {i + 1}
+                                    {item.id}
                                 </th>
                                 <th
                                     scope="row"
                                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                 >
                                     {/* /newtable${item.id}" */}
-                                    <button onClick={()=>singlebtn(item)} style={{ color: "blue" }}> {item?.employeename}  </button>
+                                    <button onClick={() => singlebtn(item)} style={{ color: "blue" }}> {item?.employeename}  </button>
                                 </th>
                                 <td className="px-6 py-4"> {item?.age}</td>
                                 <td className="px-6 py-4"> {item?.exprience}</td>
