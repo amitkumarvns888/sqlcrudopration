@@ -7,6 +7,8 @@ var mysqlconnection=mysql.createConnection({
     database:'employeedetails'
 })
 
+
+//connection first
 mysqlconnection.connect((err)=>{
     if(err){
         console.log(`error in db connection  ${JSON.stringify(err,undefined,2)}`)

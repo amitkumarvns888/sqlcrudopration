@@ -76,7 +76,13 @@ const NewTable = () => {
         }
     };
 
-
+    const handlerelDelete = async (id) => {
+        console.log("foentend", id);
+        const res = await axios.delete(`http://localhost:8085/relativedelete/${id}`);
+        if (res.status === 200) {
+            fetchreltabledata();
+        }
+    };
 
 
 
@@ -323,7 +329,7 @@ const NewTable = () => {
                                             Edit
                                         </NavLink>
                                         <button
-                                            onClick={() => handleDelete(item.id)}
+                                            onClick={() => handlerelDelete(item.id)}
                                             className="font-medium text-red-500  hover:underline deletebtn"
                                         >
                                             Delete
